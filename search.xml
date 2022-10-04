@@ -139,6 +139,23 @@
       </tags>
   </entry>
   <entry>
+    <title>剑指offer习题</title>
+    <url>/2022/10/04/8-%E5%89%91%E6%8C%87offer/</url>
+    <content><![CDATA[<p>存一下剑指offer刷题进度 <span id="more"></span></p>
+<h3 id="section">2022.10.4</h3>
+<p><a href="https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/" target="_blank">用两个栈实现队列</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">CQueue</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt;st1 , st2 ;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">op</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(!st1.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            st2.<span class="built_in">push</span>(st1.<span class="built_in">top</span>());</span><br><span class="line">            st1.<span class="built_in">pop</span>();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">CQueue</span>() &#123;&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">appendTail</span><span class="params">(<span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">        st1.<span class="built_in">push</span>(value);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">deleteHead</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(st2.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="keyword">if</span>(st1.<span class="built_in">empty</span>())&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span> ;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">op</span>();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> value = st2.<span class="built_in">top</span>();</span><br><span class="line">        st2.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">return</span> value ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/" target="_blank">包含min函数的栈</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">/** initialize your data structure here. */</span></span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st ;</span><br><span class="line">    stack&lt;<span class="type">int</span>&gt; st1 ;</span><br><span class="line">    <span class="type">int</span> t = INT_MAX ;</span><br><span class="line">    <span class="built_in">MinStack</span>() &#123;</span><br><span class="line">        st1.<span class="built_in">push</span>(t) ;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">push</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">        st.<span class="built_in">push</span>(x);</span><br><span class="line">        <span class="keyword">if</span>( x &lt;= st1.<span class="built_in">top</span>())&#123;</span><br><span class="line">            st1.<span class="built_in">push</span>(x);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            st1.<span class="built_in">push</span>(st1.<span class="built_in">top</span>());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        st.<span class="built_in">pop</span>(); </span><br><span class="line">        st1.<span class="built_in">pop</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> value = st.<span class="built_in">top</span>();</span><br><span class="line">        <span class="keyword">return</span> value ;    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">min</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> st1.<span class="built_in">top</span>() ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>剑指offer</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git踩坑记</title>
     <url>/2022/10/04/6-%E8%B8%A9%E5%9D%91%E8%AE%B0/</url>
     <content><![CDATA[<p>发现个好玩的事。<br>
@@ -239,28 +256,5 @@ Coding或许就不会如此，如今让我懊恼的，是高中满是破绽的�
       <tags>
         <tag>杂项 &lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;&lt;/script&gt;</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/10/04/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very
-first post. Check <a href="https://hexo.io/docs/">documentation</a> for
-more info. If you get any problems when using Hexo, you can find the
-answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
-you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start">Quick Start</h2>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
 </search>
